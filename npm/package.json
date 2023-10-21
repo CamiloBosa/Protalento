@@ -1,0 +1,20 @@
+{
+  "name": "ejemplo-de-npm",
+  "version": "1.0.0",
+  "description": "Ejemplo de npm para principiantes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "javascript",
+    "paqueteria"
+  ],
+  "author": "Camilo",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "jquery": "^3.7.0"
+  }
+}

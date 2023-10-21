@@ -1,0 +1,66 @@
+<%- include('partials/_header'); -%>
+
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-7"> 
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>PRODUCTO</th>
+                        <th>CANTIDAD</th>
+                        <th>PRECIO</th>
+                        <th>TOTAL</th>
+                        <th>ACCIÓN</th>
+
+                    </tr>
+                </thead>
+                <Tbody>
+                    <% if (data) { %>
+                        <% for (var i = 0; i< data.length; i++) { %>
+                            <tr>
+                                <td><%= (i+1) %></td>
+                                <td> <%= data[i].producto %></td>
+                                <td> <%= data[i].cantidad %></td>
+                                <td> <%= data[i].precio %></td>
+                                <td> <%= data[i].total %></td>
+                                <td>
+                                    <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Borrar</a>
+                                    
+                                    <a href="/update/<%= data[i].id %>" class="btn btn-info">Editar</a>
+
+                                </td>
+                            </tr>
+                        <% } %>  
+                    <% } %>        
+                    
+                </Tbody>
+            </table>
+    </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group p-1">
+                            <input type="text" name="PRODUCTO" placeholder="PRODUCTO" class="form-control">
+                        </div>
+                        <div class="form-group p-1">
+                            <input type="number" name="CANTIDAD" placeholder="CANTIDAD" class="form-control">
+                        </div>
+
+                        <div class="form-group p-1">
+                            <input type="number" name="PRECIO" placeholder="PRECIO" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-dark"> Agregar producto </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer'); -%>
+
