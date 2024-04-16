@@ -12,6 +12,12 @@ function App() {
   const agregarInput = val => {
     const lastChar = input[input.length - 1];
     const operators = "+-*/";
+
+    if (!input && operators.includes(val)) {
+      alert("El primer dato no puede ser un operador");
+      return;
+    }
+  
     
     if (operators.includes(lastChar) && operators.includes(val)) {
       return alert("Por favor ingrese valores correctos para realizar los cálculos")
